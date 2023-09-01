@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  catalog-api:
+    build: ./Catalog/
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      #- ConnectionString=YOUR_VALUE
+    ports:
+      - "5101:80"
+  basket-api:
+    build: ./Basket/
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      #- ConnectionString=YOUR_VALUE
+    ports:
+      - "5102:80"
