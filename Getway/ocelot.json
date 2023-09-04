@@ -1,7 +1,7 @@
 {
     "Routes": [
       {
-        "DownstreamPathTemplate": "/api/catalog/WeatherForecast/",
+        "DownstreamPathTemplate": "/api/catalog/",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
@@ -13,7 +13,20 @@
         "UpstreamHttpMethod": [ "GET" ]
       },
       {
-        "DownstreamPathTemplate": "/api/basket/WeatherForecast/",
+        "DownstreamPathTemplate": "/api/catalog/",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5154
+          }
+        ],
+        "UpstreamPathTemplate": "/catalog",
+        "UpstreamHttpMethod": [ "GET" ]
+      },
+
+      {
+        "DownstreamPathTemplate": "/api/basket/",
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
