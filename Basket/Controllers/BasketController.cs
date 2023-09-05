@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace Basket.Controllers;
 
 [ApiController]
-[Route("api/basket/[controller]")]
+[Route("api/[controller]")]
 public class BasketController : ControllerBase
 {
     [HttpGet]
-    public Carrinho Get()
+    public IEnumerable<Item> Get()
     {
         var cesta = new BasketRepository();
         return cesta.GetCarrinho();

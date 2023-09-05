@@ -10,21 +10,9 @@
           }
         ],
         "UpstreamPathTemplate": "/catalog",
-        "UpstreamHttpMethod": [ "GET" ]
+        "UpstreamHttpMethod": [ "GET", "POST" ]
       },
-      {
-        "DownstreamPathTemplate": "/api/catalog/",
-        "DownstreamScheme": "http",
-        "DownstreamHostAndPorts": [
-          {
-            "Host": "localhost",
-            "Port": 5154
-          }
-        ],
-        "UpstreamPathTemplate": "/catalog",
-        "UpstreamHttpMethod": [ "GET" ]
-      },
-
+      
       {
         "DownstreamPathTemplate": "/api/basket/",
         "DownstreamScheme": "http",
@@ -35,7 +23,7 @@
           }
         ],
         "UpstreamPathTemplate": "/basket",
-        "UpstreamHttpMethod": [ "GET"]
+        "UpstreamHttpMethod": [ "GET", "POST"]
       }
     ]
 }
