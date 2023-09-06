@@ -6,14 +6,32 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
-      #- ConnectionString=YOUR_VALUE
     ports:
-      - "5101:80"
+      - "5154:80"
+    networks:
+      - internal
   basket-api:
     build: ./Basket/
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5289:80"
+    networks:
+      - internal
+  getway:
+    build: ./Getway/
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
       #- ConnectionString=YOUR_VALUE
     ports:
-      - "5102:80"
+      - "5555:80"
+    networks:
+      - internal
+    depends_on:
+      - catalog-api
+      - basket-api
+networks:
+  internal:
+    driver: bridge

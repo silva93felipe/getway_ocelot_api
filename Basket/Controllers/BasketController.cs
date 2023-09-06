@@ -16,12 +16,17 @@ public class BasketController : ControllerBase
     }
 
     [HttpPost]
-    public void Create()
+    public void Create(Item item)
     {
-        var item1 = new Item () { Id = 3, Nome = "Lapiseira", Quantidade = 2, Valor = 1.2 };     
-
         var cesta = new BasketRepository();
-        cesta.AdicionarItem(item1);
-
+        cesta.AdicionarItem(item);
     }
+
+    [HttpGet("{id}")]
+    public Item? Get(int id)
+    {
+        var cesta = new BasketRepository();
+        return cesta.GetById(id);
+    }
+
 }

@@ -36,5 +36,9 @@ namespace Basket.Repository
         public IEnumerable<Item> GetCarrinho(){
             return Carrinho;
         }
+
+        public Item? GetById(int id){
+            return Carrinho.Find(e => e.Id == id);
+        }
     }
 }

@@ -5,11 +5,24 @@
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
-            "Host": "localhost",
+            "Host": "catalog-api",
             "Port": 5154
           }
         ],
         "UpstreamPathTemplate": "/catalog",
+        "UpstreamHttpMethod": [ "GET", "POST" ]
+      },
+
+      {
+        "DownstreamPathTemplate": "/api/catalog/ByCategoria/{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "catalog-api",
+            "Port": 5154
+          }
+        ],
+        "UpstreamPathTemplate": "/catalog/ByCategoria/{id}",
         "UpstreamHttpMethod": [ "GET", "POST" ]
       },
       
@@ -18,12 +31,25 @@
         "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
-            "Host": "localhost",
+            "Host": "basket-api",
             "Port": 5289
           }
         ],
         "UpstreamPathTemplate": "/basket",
         "UpstreamHttpMethod": [ "GET", "POST"]
+      },
+
+      {
+        "DownstreamPathTemplate": "/api/basket/{id}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "basket-api",
+            "Port": 5289
+          }
+        ],
+        "UpstreamPathTemplate": "/basket/{id}",
+        "UpstreamHttpMethod": [ "GET"]
       }
     ]
 }
